@@ -6,47 +6,146 @@
   <meta name="viewport" content="width=device-width">
   <title>BuzzFeed Character Quiz</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@40,400,0,0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <template id="ui-btn-template">
+    <style>
+      ._ripple--enter {
+        --ripple-duration: inherit;
+        z-index: 0;
+        position: absolute;
+        /* The absolute position we mentioned earlier */
+        border-radius: 50%;
+        transform: scale(0);
+        -webkit-animation: rippleEnter calc(var(--ripple-duration) * 1ms) forwards;
+        animation: rippleEnter calc(var(--ripple-duration) * 1ms) forwards;
+        background-color: rgba(var(--ripple-color-rgb), 0.3);
+      }
+
+      ._ripple--leave {
+        -webkit-animation: rippleLeave 0.6s;
+        animation: rippleLeave 0.6s;
+      }
+
+      @-webkit-keyframes rippleEnter {
+        from {
+          transform: scale(0);
+        }
+
+        to {
+          transform: scale(2);
+        }
+      }
+
+      @keyframes rippleEnter {
+        from {
+          transform: scale(0);
+        }
+
+        to {
+          transform: scale(2);
+        }
+      }
+
+      @-webkit-keyframes rippleLeave {
+        from {
+          transform: scale(2);
+          opacity: 1;
+        }
+
+        to {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+
+      @keyframes rippleLeave {
+        from {
+          transform: scale(2);
+          opacity: 1;
+        }
+
+        to {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+    </style>
+  </template>
 </head>
 
 <body>
 
-  <div class="header">
-    <div>
-      <img class="logo" src="images/pngfind.com-buzzfeed-logo-png-74199.png">
+  <div is="ui-navbar" class="ui-navbar qz-navbar">
+    <img src="images/pngfind.com-buzzfeed-logo-png-74199.png" width="25px" height="25px">
+    <div class="qz-links">
+      <a is="ui-anchor" href="https://www.buzzfeed.com/quizzes">Quizzes</a>
+      <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/tvandmovies">TV & Movies</a>
+      <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/shopping">Shopping</a>
+      <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/news">News</a>
+      <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/tasty">Tasty</a>
     </div>
-    <div><a href="https://www.buzzfeed.com/quizzes">Quizzes</a></div>
-    <div><a href="https://www.buzzfeed.com/tvandmovies">TV & Movies</a></div>
-    <div><a href="https://www.buzzfeed.com/shopping">Shopping</a></div>
-    <div><a href="https://www.buzzfeed.com/news">News</a></div>
-    <div><a href="https://www.buzzfeed.com/tasty">Tasty</a></div>
   </div>
 
-  <div class="cover">
-    <!-- task 1: update the header for your quiz -->
-    <h1> Which [ ] Character Are You? </h1>
+  <main>
+    <article>
+      <header class="qz-header">
+        <h1 style="text-center">What CN Character Are You?</h1>
+        <img src="https://cdn.wionews.com/sites/default/files/styles/story_page/public/2022/10/14/303791-cn.jpeg"
+          width="100%">
+      </header>
+    </article>
 
-    <!-- task 2: update the cover photo for your quiz -->
-    <img class="coverPhoto" src="https://media.sproutsocial.com/uploads/2018/04/Facebook-Cover-Photo-Size.png">
-  </div>
+    <form id="bf-quiz/section-0">
+      <h2>Would You Rather...</h2>
+      <div>
+        <input type="radio" id="question-wyr/pf" name="question-wyr" value="0">
+        <label for="question-wyr/pf">
+          Have a Talking Pet Fish
+          <img src="images/darwin.png">
+        </label>
+      </div>
+      <div>
+        <input type="radio" id="question-wyr/pd" name="question-wyr" value="2">
+        <label for="question-wyr/pd">Have a Talking Pet Dog</label>
+      </div>
+      <div>
+        <input type="radio" id="question-wyr/fr" name="question-wyr" value="4">
+        <label for="question-wyr/fr">Have a Talking Feral Roomate</label>
+      </div>
+    </form>
 
-  <!-- task 3: Update the questions for your quiz. Be sure to have AT LEAST three to ask the user. Add more questions if you want!-->
-   <div class="questions">
-    <h3> 1. [Question 1] </h3>
-    <input class="q1">
-    </br>
-    <h3> 2. [Question 2] </h3>
-    <input class="q2">
-    </br>
-    <h3> 3. [Question 3] </h3>
-    <input class="q3">
-  </div>
-  </br>
+    <form id="bf-quiz/section-1">
+      <h2>Are you a slacker?</h2>
+      <div>
+        <input type="radio" id="sla/yes" name="question-wyr" value="0">
+        <label for="question-wyr/pf">Have a Talking Pet Fish</label>
+      </div>
+      <div>
+        <input type="radio" id="question-wyr/pd" name="question-wyr" value="0">
+        <label for="question-wyr/pd">Have a Talking Pet Dog</label>
+      </div>
+      <div>
+        <input type="radio" id="question-wyr/fr" name="question-wyr" value="0">
+        <label for="question-wyr/fr">Have a Talking Feral Roomate</label>
+      </div>
+    </form>
+  </main>
 
-  <div class="displayResult">
-    <button class="submit"> Submit!</button>
-  </div>
-  </br>
+  <form id="bf-quiz/section-2">
+    <h2>What's your mood?</h2>
+    <div>
+      <input type="radio" id="sla/yes" name="question-wyr" value="0">
+      <label for="question-wyr/pf">Have a Talking Pet Fish</label>
+    </div>
+  </form>
+  </main>
+
+  <script src="material-ui.js"></script>
   <script src="script.js"></script>
 </body>
 
