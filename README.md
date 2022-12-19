@@ -10,10 +10,10 @@ If two users input the same answers, they should receive the same result.
 Make sure to check off your items as you complete them. [ ] → [x]
 
 ## Planning
-- [ ] Review your Starter Code and make sure you understand what code has already been written for you.
+- [x] Review your Starter Code and make sure you understand what code has already been written for you.
 
 ## Set-Up
-- [ ] Fork your own copy of the repl.
+- [x] Fork your own copy of the repl.
 - [ ] Double-check that you are signed in with your GitHub account.
 
 ## HTML

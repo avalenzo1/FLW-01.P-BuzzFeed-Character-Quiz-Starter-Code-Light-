@@ -100,49 +100,80 @@
       </header>
     </article>
 
-    <form id="bf-quiz/section-0">
-      <h2>Would You Rather...</h2>
-      <div>
-        <input type="radio" id="question-wyr/pf" name="question-wyr" value="0">
-        <label for="question-wyr/pf">
-          Have a Talking Pet Fish
-          <img src="images/darwin.png">
-        </label>
-      </div>
-      <div>
-        <input type="radio" id="question-wyr/pd" name="question-wyr" value="2">
-        <label for="question-wyr/pd">Have a Talking Pet Dog</label>
-      </div>
-      <div>
-        <input type="radio" id="question-wyr/fr" name="question-wyr" value="4">
-        <label for="question-wyr/fr">Have a Talking Feral Roomate</label>
-      </div>
+    <form id="bf-quiz">
+      <section id="bf-quiz/section-0">
+        <h2>Would You Rather...</h2>
+        <div>
+          <input type="radio" id="question-wyr/pet-fish" name="question-wyr" value="5">
+          <label for="question-wyr/pet-fish">
+            Have a Talking Pet Fish
+            <img src="images/darwin.png">
+          </label>
+        </div>
+        <div>
+          <input type="radio" id="question-wyr/friend-dog" name="question-wyr" value="2">
+          <label for="question-wyr/friend-dog">Be friends with a dog</label>
+        </div>
+        <div>
+          <input type="radio" id="question-wyr/feral-racoon" name="question-wyr" value="23">
+          <label for="question-wyr/feral-racoon">Have a Talking Feral Roomate Bro</label>
+        </div>
+        <div>
+          <input type="radio" id="question-wyr/con-artist" name="question-wyr" value="42">
+          <label for="question-wyr/con-artist">Be a Con Artist</label>
+        </div>
+      </section>
+
+      <section id="bf-quiz/section-1">
+        <h2>Are you a slacker?</h2>
+        <div>
+          <input type="radio" id="question-slacker/kinda-lazy" name="question-slacker" value="5">
+          <label for="question-slacker/kinda-lazy">So lazy I wouldn't take out the trash</label>
+        </div>
+        <div>
+          <input type="radio" id="question-slacker/lazy" name="question-slacker" value="45">
+          <label for="question-slacker/lazy">I never knew being fat and lazy was so rewarding!</label>
+        </div>
+        <div>
+          <input type="radio" id="question-slacker/not-lazy" name="question-slacker" value="-25">
+          <label for="question-slacker/not-lazy">Nope; we husslin'</label>
+        </div>
+        <div>
+          <input type="radio" id="question-slacker/very-lazy" name="question-slacker" value="100">
+          <label for="question-slacker/very-lazy">I'm 23 and I'm still lazy</label>
+        </div>
+      </section>
+
+      <section id="bf-quiz/section-2">
+        <h2>What's your mood?</h2>
+        <div>
+          <input type="radio" id="question-mood/sad-hungry" name="question-mood" value="-23">
+          <label for="question-mood/sad-hungry">Sad</label>
+          <img src="https://media.tenor.com/NMEIobKo7IMAAAAC/currentmood-jake.gif">
+        </div>
+        <div>
+          <input type="radio" id="question-mood/hype" name="question-mood" value="125">
+          <label for="question-mood/hype">Hype</label>
+          <img src="https://i.kym-cdn.com/photos/images/original/001/899/748/914.gif">
+        </div>
+        <div>
+          <input type="radio" id="question-mood/comfortable" name="question-mood" value="55">
+          <label for="question-mood/comfortable">Comfortable</label>
+          <img src="https://media.tenor.com/ob-0_hIHjfYAAAAC/bare-bears-we-bare-bears.gif">
+        </div>
+        <div>
+          <input type="radio" id="question-mood/aggressive" name="question-mood" value="14">
+          <label for="question-mood/comfortable">Aggressive</label>
+          <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/804/927/8e6.gif">
+        </div>
+      </section>
+
+      <button type="submit">SUBMIT!!</button>
     </form>
 
-    <form id="bf-quiz/section-1">
-      <h2>Are you a slacker?</h2>
-      <div>
-        <input type="radio" id="sla/yes" name="question-wyr" value="0">
-        <label for="question-wyr/pf">Have a Talking Pet Fish</label>
-      </div>
-      <div>
-        <input type="radio" id="question-wyr/pd" name="question-wyr" value="0">
-        <label for="question-wyr/pd">Have a Talking Pet Dog</label>
-      </div>
-      <div>
-        <input type="radio" id="question-wyr/fr" name="question-wyr" value="0">
-        <label for="question-wyr/fr">Have a Talking Feral Roomate</label>
-      </div>
-    </form>
-  </main>
+    <div id="result">
 
-  <form id="bf-quiz/section-2">
-    <h2>What's your mood?</h2>
-    <div>
-      <input type="radio" id="sla/yes" name="question-wyr" value="0">
-      <label for="question-wyr/pf">Have a Talking Pet Fish</label>
     </div>
-  </form>
   </main>
 
   <script src="material-ui.js"></script>
