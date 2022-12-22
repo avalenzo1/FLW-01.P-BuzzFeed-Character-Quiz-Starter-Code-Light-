@@ -80,105 +80,201 @@
 
 <body>
 
-  <div is="ui-navbar" class="ui-navbar qz-navbar">
-    <a is="ui-anchor" href="#">
-      <img src="images/pngfind.com-buzzfeed-logo-png-74199.png" width="25px" height="25px">
-    </a>
-    <div class="qz-links">
-      <a is="ui-anchor" href="https://www.buzzfeed.com/quizzes">Quizzes</a>
-      <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/tvandmovies">TV & Movies</a>
-      <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/shopping">Shopping</a>
-      <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/news">News</a>
-      <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/tasty">Tasty</a>
-    </div>
-  </div>
-
-  <main>
-    <form id="bf-quiz">
-      <article>
-        <header class="qz-header">
-          <h1 style="text-center">What CN Character Are You?</h1>
-          <img src="https://cdn.wionews.com/sites/default/files/styles/story_page/public/2022/10/14/303791-cn.jpeg"
-            width="100%">
+  <main class="bf-app">
+    <nav is="ui-navbar" class="ui-navbar bf-navbar">
+      <a is="ui-anchor" href="/">
+        <img src="images/pngfind.com-buzzfeed-logo-png-74199.png" width="25px" height="25px">
+      </a>
+      <div class="qz-links">
+        <a is="ui-anchor" href="https://www.buzzfeed.com/quizzes">Quizzes</a>
+        <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/tvandmovies">TV & Movies</a>
+        <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/shopping">Shopping</a>
+        <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/news">News</a>
+        <a is="ui-anchor" class="ui-btn" href="https://www.buzzfeed.com/tasty">Tasty</a>
+      </div>
+    </nav>
+    <form id="bf-quiz" class="view-controller">
+      <section class="page-view" id="bf-quiz/home" data-view="home-view">
+        <header class="bf-header">
+          <div class="header-cover">
+            <img src="./images/wallpaper.jpg">
+            <div class="cover-foreground"></div>
+          </div>
+          <div class="header-aside">
+            <h1 style="text-center">What CN Character Are You?</h1>
+            <button is="ui-btn" type="button" color="primary" size="lg" data-link="section-0" round="sm"> Start Quiz
+            </button>
+          </div>
         </header>
-      </article>
-      <section id="bf-quiz/section-0">
-        <h2>Would You Rather...</h2>
-        <div>
-          <input type="radio" id="question-wyr/pet-fish" name="question-wyr" value="5">
-          <label for="question-wyr/pet-fish">
-            Have a Talking Pet Fish
-            <img src="images/darwin.png">
-          </label>
-        </div>
-        <div>
-          <input type="radio" id="question-wyr/friend-dog" name="question-wyr" value="2">
-          <label for="question-wyr/friend-dog">Be friends with a dog</label>
-        </div>
-        <div>
-          <input type="radio" id="question-wyr/feral-racoon" name="question-wyr" value="23">
-          <label for="question-wyr/feral-racoon">Have a Talking Feral Roomate Bro</label>
-        </div>
-        <div>
-          <input type="radio" id="question-wyr/con-artist" name="question-wyr" value="42">
-          <label for="question-wyr/con-artist">Be a Con Artist</label>
+      </section>
+      <section class="page-view" id="bf-quiz/section-0" data-view="section-0">
+        <div class="content-view">
+          <h2>Would You Rather...</h2>
+          <div class="card-wrapper">
+            <div class="card-container">
+              <input type="radio" id="question-wyr/pet-fish" name="question-wyr" value="5">
+              <label class="card-label" for="question-wyr/pet-fish">
+                <div class="card-image">
+                  <img src="images/darwin.png">
+                </div>
+                <div class="card-text">
+                  Have a Talking Pet Fish
+                </div>
+              </label>
+            </div>
+            <div class="card-container">
+              <input type="radio" id="question-wyr/friend-dog" name="question-wyr" value="2">
+              <label class="card-label" for="question-wyr/friend-dog">
+                <div class="card-image">
+                  <img src="https://static.wikia.nocookie.net/great-characters/images/7/70/Finn_and_Jake-0.png">
+                </div>
+                <div class="card-text">
+                  Be friends with a dog
+                </div>
+              </label>
+            </div>
+            <div class="card-container">
+              <input type="radio" id="question-wyr/feral-racoon" name="question-wyr" value="23">
+              <label class="card-label" for="question-wyr/feral-racoon">
+                <div class="card-image">
+                  <img src="http://pm1.narvii.com/7858/df72cac18b6b7d272369adef932336f45efcdc46r1-272-270v2_00.jpg">
+                </div>
+                <div class="card-text">
+                  Have a Talking Feral Roomate Bro
+                </div>
+              </label>
+            </div>
+            <div class="card-container">
+              <input type="radio" id="question-wyr/con-artist" name="question-wyr" value="42">
+              <label class="card-label" for="question-wyr/con-artist">
+                <div class="card-image">
+                  <img src="https://static.tvtropes.org/pmwiki/pub/images/Ed-Edd-n-Eddy_9211.png">
+                </div>
+                <div class="card-text">
+                  Be a Con Artist
+                </div>
+              </label>
+            </div>
+          </div>
         </div>
       </section>
+      <section class="page-view" id="bf-quiz/section-1" data-view="section-1">
+        <div class="content-view">
+          <h2>Which quote speaks to you?</h2>
 
-      <section id="bf-quiz/section-1">
-        <h2>Are you a slacker?</h2>
-        <div>
-          <input type="radio" id="question-slacker/kinda-lazy" name="question-slacker" value="5">
-          <label for="question-slacker/kinda-lazy">So lazy I wouldn't take out the trash</label>
-        </div>
-        <div>
-          <input type="radio" id="question-slacker/lazy" name="question-slacker" value="45">
-          <label for="question-slacker/lazy">I never knew being fat and lazy was so rewarding!</label>
-        </div>
-        <div>
-          <input type="radio" id="question-slacker/not-lazy" name="question-slacker" value="-25">
-          <label for="question-slacker/not-lazy">Nope; we husslin'</label>
-        </div>
-        <div>
-          <input type="radio" id="question-slacker/very-lazy" name="question-slacker" value="100">
-          <label for="question-slacker/very-lazy">I'm 23 and I'm still lazy</label>
+          <div class="card-wrapper">
+            <div class="card-container">
+              <input type="radio" id="question-slacker/kinda-lazy" name="question-slacker" value="5">
+              <label class="card-label" for="question-slacker/kinda-lazy">
+                <div class="card-image">
+                  <img src="images/darwin.png">
+                </div>
+                <div class="card-text">
+                  So lazy I wouldn't take out the trash
+                </div>
+              </label>
+            </div>
+            <div class="card-container">
+              <input type="radio" id="question-slacker/lazy" name="question-slacker" value="45">
+              <label class="card-label" for="question-slacker/lazy">
+                <div class="card-image">
+                  <img src="https://static.wikia.nocookie.net/great-characters/images/7/70/Finn_and_Jake-0.png">
+                </div>
+                <div class="card-text">
+                  I never knew being fat and lazy was so rewarding!
+                </div>
+              </label>
+            </div>
+            <div class="card-container">
+              <input type="radio" id="question-slacker/not-lazy" name="question-slacker" value="-25">
+              <label class="card-label" for="question-slacker/not-lazy">
+                <div class="card-image">
+                  <img src="http://pm1.narvii.com/7858/df72cac18b6b7d272369adef932336f45efcdc46r1-272-270v2_00.jpg">
+                </div>
+                <div class="card-text">
+                  Have a Talking Feral Roomate Bro
+                </div>
+              </label>
+            </div>
+            <div class="card-container">
+              <input type="radio" id="question-slacker/very-lazy" name="question-slacker" value="100">
+              <label class="card-label" for="question-slacker/very-lazy">
+                <div class="card-image">
+                  <img src="https://static.tvtropes.org/pmwiki/pub/images/Ed-Edd-n-Eddy_9211.png">
+                </div>
+                <div class="card-text">
+                  I'm 23 and I'm still lazy
+                </div>
+              </label>
+            </div>
+          </div>
         </div>
       </section>
+      <section class="page-view" id="bf-quiz/section-2" data-view="section-2">
+        <div class="content-view">
+          <h2>Pick your mood.</h2>
 
-      <section id="bf-quiz/section-2">
-        <h2>What's your mood?</h2>
-        <div>
-          <input type="radio" id="question-mood/sad-hungry" name="question-mood" value="-23">
-          <label for="question-mood/sad-hungry">Sad</label>
-          <img src="https://media.tenor.com/NMEIobKo7IMAAAAC/currentmood-jake.gif">
-        </div>
-        <div>
-          <input type="radio" id="question-mood/hype" name="question-mood" value="125">
-          <label for="question-mood/hype">Hype</label>
-          <img src="https://i.kym-cdn.com/photos/images/original/001/899/748/914.gif">
-        </div>
-        <div>
-          <input type="radio" id="question-mood/comfortable" name="question-mood" value="55">
-          <label for="question-mood/comfortable">Comfortable</label>
-          <img src="https://media.tenor.com/ob-0_hIHjfYAAAAC/bare-bears-we-bare-bears.gif">
-        </div>
-        <div>
-          <input type="radio" id="question-mood/aggressive" name="question-mood" value="14">
-          <label for="question-mood/comfortable">Aggressive</label>
-          <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/804/927/8e6.gif">
+          <div class="card-wrapper">
+            <div class="card-container">
+              <input type="radio" id="question-mood/sad-hungry" name="question-mood" value="-23">
+              <label class="card-label" for="question-mood/sad-hungry">
+                <div class="card-image">
+                  <img src="https://media.tenor.com/NMEIobKo7IMAAAAC/currentmood-jake.gif">
+                </div>
+                <div class="card-text">
+                  Sad
+                </div>
+              </label>
+            </div>
+            <div class="card-container">
+              <input type="radio" id="question-mood/hype" name="question-mood" value="125">
+              <label class="card-label" for="question-mood/hype">
+                <div class="card-image">
+                  <img src="https://i.kym-cdn.com/photos/images/original/001/899/748/914.gif">
+                </div>
+                <div class="card-text">
+                  Manic
+                </div>
+              </label>
+            </div>
+            <div class="card-container">
+              <input type="radio" id="question-mood/comfortable" name="question-mood" value="55">
+              <label class="card-label" for="question-mood/comfortable">
+                <div class="card-image">
+                  <img src="https://media.tenor.com/ob-0_hIHjfYAAAAC/bare-bears-we-bare-bears.gif">
+                </div>
+                <div class="card-text">
+                  Confortable
+                </div>
+              </label>
+            </div>
+            <div class="card-container">
+              <input type="radio" id="question-mood/aggressive" name="question-mood" value="14">
+              <label class="card-label" for="question-mood/aggressive">
+                <div class="card-image">
+                  <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/905/854/00b.gif">
+                </div>
+                <div class="card-text">
+                  Aggressive
+                </div>
+              </label>
+            </div>
+          </div>
         </div>
       </section>
-
-      <button type="submit">SUBMIT!!</button>
+      <section class="page-view" id="bf-quiz/result" data-view="result-view">
+        <div class="content-view">
+          <h1>The results are in; you're <span id="character-name"></span></h1>
+          <img id="character-image">
+        </div>
+      </section>
     </form>
-
-    <div id="result">
-
-    </div>
   </main>
 
+  <button form="bf-quiz" type="submit" id="bf/submit" hidden>Submit</button>
+
   <script src="material-ui.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 
 </html>

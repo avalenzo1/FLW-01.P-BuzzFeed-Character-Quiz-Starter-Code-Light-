@@ -97,6 +97,10 @@ color: rgba(var(--btn-tint), 1);
     aspect-ratio: 1 / 1;
 }
 
+.ui-btn[round~=sm] {
+    border-radius: 0.5rem;
+}
+
 .ui-btn[color~=light] {
     --btn-tint: 255, 255, 255;
     --blend-mode: black;
@@ -115,8 +119,10 @@ color: rgba(var(--btn-tint), 1);
     --ripple-tint: var(--secondary-rgb);
 }
 
-.ui-btn[size~=large] {
-  
+.ui-btn[size~=lg] {
+  --padding-h: 20;
+  --padding-v: 10;
+  font-size: 16px;
 }
 
 .ui-modal {
@@ -245,11 +251,182 @@ color: rgba(var(--btn-tint), 1);
     backdrop-filter: blur(5px) saturate(0.5);
 }
 
-.qz-navbar, .qz-links {
+.view-controller {
+  flex: 1;
+}
+
+.view-controller .page-view {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: var(--tt-primary);
+  overflow: auto;
+}
+
+.view-controller .page-view-mount {
+  display: block;
+  animation: slide-in-left 0.5s;
+  perspective: 250px;
+}
+
+.view-controller .page-view-unmount {
+  animation: slide-out-left 0.5s;
+  perspective: 250px;
+}
+
+.bf-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.bf-navbar, .bf-links {
+  z-index: 99;
   justify-content: space-between; 
   align-content: center;
 }
 
-.qz-links a {
+.bf-links a {
   color: white;
+}
+
+.bf-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.bf-header .header-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bf-header .header-cover .cover-foreground {
+  background-color: rgba(var(--primary-rgb), 0.15);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.bf-header .header-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bf-header .header-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  background-color: #1e1a17f7;
+  color: #ffffff;
+  top: 0;
+  bottom: 0;
+  padding: 1.5rem;
+  backdrop-filter: saturate(2.5) blur(15px);
+}
+
+.content-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+      ". ."
+      ". .";
+  aspect-ratio: 1;
+  height: 100%;
+  flex: 1;
+}
+
+.card-wrapper .card-label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  perspective: 250px;
+  perspective-origin: center;
+  cursor: pointer;
+}
+
+.card-wrapper .card-label .card-image, .card-wrapper .card-label .card-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.card-wrapper .card-label .card-text {
+  display: grid;
+  place-items: center;
+  background-color: #1e1a17;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 2rem;
+  text-align: center;
+  transform: rotateY(90deg) translate(100%, 0);
+  opacity: 0;
+}
+
+.card-wrapper .card-label .card-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-wrapper .card-label:hover .card-text {
+  display: grid;
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.card-wrapper .card-label:hover .card-image {
+  opacity: 0;
+  transform: rotateY(-90deg) translate(-100%, 0);
+}
+
+.card-wrapper .card-container {
+  position: relative;
+}
+
+.card-wrapper .card-container input {
+  display: none;
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translate(-100%, 0);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(100%, 0);
+  }
 }
