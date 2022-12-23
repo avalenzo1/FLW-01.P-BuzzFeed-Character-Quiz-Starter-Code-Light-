@@ -16,6 +16,15 @@ body {
     background-color: #fff;
 }
 
+@font-face {
+  font-family: 'Cartoon-Slam';
+  src: url(https://cdn.glitch.global/fd885754-5362-4e43-9417-01d10136fcca/Cartoon%20Slam.ttf?v=1671738494691);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Cartoon-Slam';
+}
+
 input,
 textarea,
 button,
@@ -344,7 +353,7 @@ color: rgba(var(--btn-tint), 1);
   justify-content: center;
   height: 100%;
   padding: 1rem;
-  overflow: hidden;
+/*   overflow-y: hidden; */
 }
 
 .card-wrapper {
@@ -364,9 +373,22 @@ color: rgba(var(--btn-tint), 1);
   position: absolute;
   width: 100%;
   height: 100%;
-  perspective: 250px;
+  perspective: 500px;
   perspective-origin: center;
   cursor: pointer;
+  font-family: 'Cartoon-Slam';
+}
+
+.card-wrapper .card-container:nth-child(2) .card-text,
+.card-wrapper .card-container:nth-child(3) .card-text {
+  background-color: #1e1a17;
+  color: #ffffff;
+}
+
+.card-wrapper .card-container:nth-child(1) .card-text
+.card-wrapper .card-container:nth-child(4) .card-text {
+  background-color: #ffffff;
+  color: #1e1a17;
 }
 
 .card-wrapper .card-label .card-image, .card-wrapper .card-label .card-text {
@@ -379,12 +401,11 @@ color: rgba(var(--btn-tint), 1);
 .card-wrapper .card-label .card-text {
   display: grid;
   place-items: center;
-  background-color: #1e1a17;
-  color: #ffffff;
   font-size: 20px;
   padding: 2rem;
   text-align: center;
   transform: rotateY(90deg) translate(100%, 0);
+  font-weight: bold;
   opacity: 0;
 }
 
@@ -428,5 +449,16 @@ color: rgba(var(--btn-tint), 1);
   }
   to {
     transform: translate(100%, 0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content-view {
+    overflow: auto;
+  }
+  
+  .card-wrapper {
+    height: auto;
+    width: 100%
   }
 }

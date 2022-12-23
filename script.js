@@ -28,8 +28,29 @@ controller.mount({
   },
   "section-1": {
     mounted(view) {
+      let audioList = [
+        new Audio("./audio/fishwithlegs.mp3"),
+        new Audio("./audio/meaningoflife.mp3"),
+        new Audio("./audio/lazy.mp3"),
+        new Audio("./audio/slackers.mp3"),
+      ];
+
       let inputs = view.querySelectorAll("input[type='radio']");
-      console.log(inputs)
+      let labels = view.querySelectorAll("label");
+
+      for (const [index, audio] of audioList.entries()) {
+        audio.onloadstart = () => {
+          labels[index].onmouseover = () => {
+            audio.play();
+          };
+  
+          labels[index].onmouseout = labels[index].onclick = () => {
+            audio.pause();
+            audio.currentTime = 0;
+          };
+        };
+      }
+
       for (let radio of inputs) {
         radio.onclick = () => {
           controller.mountView("section-2");
@@ -61,6 +82,7 @@ form.onsubmit = (e) => {
 
   let name = document.getElementById("character-name");
   let image = document.getElementById("character-image");
+  let result = document.getElementById("character-score");
 
   let score = 0;
   let source;
@@ -84,16 +106,17 @@ form.onsubmit = (e) => {
     score += Number(questionThree.value);
   }
 
-  if (score > 100) {
-    character = "Edd";
-    source = 'https://static.wikia.nocookie.net/edwikia/images/7/72/Edd.1.png'
-  } else if (score > 80) {
+  // if (score > 12) {
+  //   character = "Edd";
+  //   source = 'https://static.wikia.nocookie.net/edwikia/images/7/72/Edd.1.png'
+  // } else if
+  if (score === 9) {
     character = "Mordecai";
     source = 'https://i.pinimg.com/564x/a0/56/5d/a0565d70b854d402461afb6c07d06557.jpg';
-  } else if (score > 70) {
+  } else if (score > 6) {
     character = "Gumball";
     source = 'https://i.embed.ly/1/display/resize?width=800&height=800&key=3e750996b20f47be9451da09d3fffa5b&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FqthE1bMTdXUas%2Fgiphy.gif';
-  } else if (score > 40) {
+  } else if (score > 2) {
     character = "Finn";
     source = 'https://media.tenor.com/-VGT1mQDFLUAAAAM/adventuretime-finn.gif';
   } else {
@@ -103,4 +126,5 @@ form.onsubmit = (e) => {
 
   image.src = source;
   name.innerHTML = character;
+  result.innerHTML = score;
 }

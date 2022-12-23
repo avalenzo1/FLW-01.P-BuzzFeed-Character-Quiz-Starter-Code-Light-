@@ -118,11 +118,15 @@ class ViewController {
   }
 }
 
+
+// not my code 👇🏽
+
 function getDescendantNodes(node, all = []) {
   all.push(...node.childNodes);
   for (const child of node.childNodes) getDescendantNodes(child, all);
   return all;
 }
+// not my code ☝🏽
 
 function clearEvents(parent) {
   let nodes = [];
