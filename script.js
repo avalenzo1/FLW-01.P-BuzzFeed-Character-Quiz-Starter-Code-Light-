@@ -43,7 +43,7 @@ controller.mount({
           labels[index].onmouseover = () => {
             audio.play();
           };
-  
+
           labels[index].onmouseout = labels[index].onclick = () => {
             audio.pause();
             audio.currentTime = 0;
@@ -124,3 +124,12 @@ form.onsubmit = (e) => {
   name.innerHTML = character;
   result.innerHTML = score;
 }
+
+document.body.onload = () => {
+
+  let url = new URL(window.location.href);
+
+  if (url.searchParams.has('started')) {
+    controller.mountView("section-0");
+  }
+};
