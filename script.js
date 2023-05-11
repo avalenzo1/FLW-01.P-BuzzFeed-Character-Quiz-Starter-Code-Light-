@@ -106,10 +106,6 @@ form.onsubmit = (e) => {
     score += Number(questionThree.value);
   }
 
-  // if (score > 12) {
-  //   character = "Edd";
-  //   source = 'https://static.wikia.nocookie.net/edwikia/images/7/72/Edd.1.png'
-  // } else if
   if (score === 9) {
     character = "Mordecai";
     source = 'https://i.pinimg.com/564x/a0/56/5d/a0565d70b854d402461afb6c07d06557.jpg';
